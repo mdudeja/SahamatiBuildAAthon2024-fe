@@ -5,6 +5,7 @@ import { Login } from "../pages/Login"
 import { Register } from "../pages/Register"
 import { Home } from "../pages/Home"
 import { AddOffering } from "../pages/AddOffering"
+import { Chat } from "../pages/Chat"
 
 export const routes = {
   "/": {
@@ -12,6 +13,12 @@ export const routes = {
     component: Home,
     showInNav: false,
     protected: true,
+  },
+  "/chat": {
+    path: "/chat",
+    component: Chat,
+    showInNav: true,
+    protected: false,
   },
   "/about": {
     path: "/about",
