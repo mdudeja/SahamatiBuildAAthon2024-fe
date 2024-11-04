@@ -1,0 +1,59 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+input {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  gap: 10px;
+  align-self: flex-end;
+  justify-self: end;
+}
+
+button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #673ab8;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+button:hover {
+  background-color: #512da8;
+}
+
+button.login-button {
+  background-color: #282d31;
+}
+
+button.login-button:hover {
+  background-color: #1e2124;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+}
