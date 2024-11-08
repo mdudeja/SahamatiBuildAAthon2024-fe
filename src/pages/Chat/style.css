@@ -5,8 +5,8 @@
   padding: 0 10px;
   width: 100%;
   align-items: end;
-  overflow-y: scroll;
   justify-content: end;
+  overflow-y: auto;
 }
 
 .chat-message {
@@ -40,4 +40,5 @@
   padding: 10px;
   margin: 5px 0;
   max-width: 70%;
+  justify-self: flex-end;
 }
