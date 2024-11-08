@@ -1,4 +1,4 @@
 export const constants = {
-  backendUrl: "http://localhost:3000",
+  backendUrl: "finsav.exitcodenone.tech",
   userKey: "aqm-scb::user",
 }

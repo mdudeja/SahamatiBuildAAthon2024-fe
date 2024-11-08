@@ -5,11 +5,11 @@ import { useEffect } from "preact/hooks"
 import { constants } from "../constants"
 
 export function useUserContext() {
-  const storedUser = localStorage.getItem(constants.userKey)
+  const storedUser = window.localStorage.getItem(constants.userKey)
   const user = signal<User | null>(storedUser ? JSON.parse(storedUser) : null)
 
   effect(() => {
-    localStorage.setItem(constants.userKey, JSON.stringify(user.value))
+    window.localStorage.setItem(constants.userKey, JSON.stringify(user.value))
   })
 
   const registerUser = async (username: string, password: string) => {
