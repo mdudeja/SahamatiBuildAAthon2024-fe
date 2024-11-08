@@ -11,6 +11,7 @@ export type OutgoingMessageEvent = {
     | "tts"
   content: any
   needsTTS?: boolean
+  endUserDetails?: any
 }
 
 export type IncomingMessageEvent = {
@@ -25,6 +26,7 @@ export type IncomingMessageEvent = {
   toUserLanguage?: boolean
   clearTrigger?: boolean
   needsTTS?: boolean
+  endUserDetails?: any
 }
 
 export default function useWebSocket({

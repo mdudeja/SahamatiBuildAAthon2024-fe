@@ -22,11 +22,11 @@ export default function Chatbox({
   const [inputFocussed, setInputFocussed] = useState(false)
   const [inputHasThreeOrMoreWords, setInputHasThreeOrMoreWords] =
     useState(false)
+  const [userDetails, setUserDetails] = useState({})
 
   const socket = useWebSocket({
     url: constants.backendUrl + "/chat",
     onMessage: (message: IncomingMessageEvent) => {
-      console.log(JSON.stringify(message, null, 2))
       switch (message.event) {
         case "answer-text":
           if (
@@ -53,6 +53,10 @@ export default function Chatbox({
             return
           }
 
+          if (message.endUserDetails) {
+            setUserDetails(message.endUserDetails)
+          }
+
           updateMessageHistory({
             text: message.content,
             type: "bot",
@@ -68,6 +72,7 @@ export default function Chatbox({
             socket.sendMessage({
               event: "question-text",
               content: message.content.trim(),
+              endUserDetails: userDetails,
             })
             return
           }
@@ -103,6 +108,7 @@ export default function Chatbox({
             event: "question-text",
             content: message.content.text,
             needsTTS: true,
+            endUserDetails: userDetails,
           })
           break
 
@@ -164,6 +170,7 @@ export default function Chatbox({
         socket.sendMessage({
           event: "question-text",
           content: currentQuestion,
+          endUserDetails: userDetails,
         })
       }
     }
